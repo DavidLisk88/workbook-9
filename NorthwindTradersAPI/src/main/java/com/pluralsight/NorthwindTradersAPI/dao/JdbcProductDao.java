@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-@Primary
 public class JdbcProductDao implements ProductDao {
     private final Connection connection;
 
