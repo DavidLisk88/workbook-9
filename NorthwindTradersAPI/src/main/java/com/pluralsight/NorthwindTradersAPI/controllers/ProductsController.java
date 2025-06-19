@@ -63,9 +63,16 @@ public class ProductsController {
 
     @PostMapping("/add")
     public Product add(@RequestBody Product product) {
-        System.out.println("Added: " + product);
         productDao.add(product);
+        System.out.println("Added: " + product);
         return product;
+    }
+
+    @PutMapping("/update/{id}")
+    public void update (@PathVariable int id, @RequestBody Product product){
+        productDao.update(id, product);
+        System.out.println("Product Updated: " + product);
+
     }
 
 }

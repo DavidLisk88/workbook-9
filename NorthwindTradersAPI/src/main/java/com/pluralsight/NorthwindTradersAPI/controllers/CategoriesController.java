@@ -51,12 +51,19 @@ public class CategoriesController {
         return category != null ? category : new Category();
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public Category addNewCategory(@RequestBody Category category){
         System.out.println("Added: " + category);
 
         categoryDao.addNewCategory(category);
         return category;
+    }
+
+    @PutMapping("/update/{id}")
+    public void update (@PathVariable int id, @RequestBody Category category){
+
+        System.out.println("Updated: " + id + "-----" + category);
+        categoryDao.update(id, category);
     }
 
 

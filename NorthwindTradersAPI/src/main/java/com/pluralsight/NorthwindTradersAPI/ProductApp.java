@@ -174,7 +174,7 @@ public class ProductApp implements CommandLineRunner {
         product.setPrice(price);
         product.setCategory(categoryId);
 
-        productDao.update(product);
+      //  productDao.update(product);
         System.out.println("Product updated.");
     }
 

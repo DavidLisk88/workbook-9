@@ -78,14 +78,14 @@ public class JdbcProductDao implements ProductDao {
     }
 
     @Override
-    public void update(Product product) {
+    public void update(int id, Product product) {
         String sql = "UPDATE products SET ProductName = ?, UnitPrice = ?, CategoryID = ? WHERE ProductID = ?";
 
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, product.getName());
             statement.setDouble(2, product.getPrice());
             statement.setInt(3, product.getCategory());
-            statement.setInt(4, product.getProductId());
+            statement.setInt(4, id);
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -217,6 +217,7 @@ public class JdbcProductDao implements ProductDao {
 
         return results;
     }
+
 
 
 }

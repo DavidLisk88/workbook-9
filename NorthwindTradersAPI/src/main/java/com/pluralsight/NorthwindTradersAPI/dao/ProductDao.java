@@ -8,7 +8,7 @@ public interface ProductDao {
     List<Product> getAll();
     Product getById(int productId);
     void add(Product product);
-    void update(Product product);
+    void update(int id, Product product);
     void delete(int productId);
     List<Product> searchByKeyword(String keyword);
     void insertProductWithCategoryName(Product product, String categoryName);
