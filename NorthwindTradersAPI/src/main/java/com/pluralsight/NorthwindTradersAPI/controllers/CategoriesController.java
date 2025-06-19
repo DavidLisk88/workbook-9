@@ -66,6 +66,11 @@ public class CategoriesController {
         categoryDao.update(id, category);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public void delete (@PathVariable int id){
+        categoryDao.delete(id);
+    }
+
 
 }
 

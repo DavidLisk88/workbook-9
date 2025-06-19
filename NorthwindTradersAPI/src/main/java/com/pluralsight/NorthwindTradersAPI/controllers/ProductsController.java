@@ -75,6 +75,12 @@ public class ProductsController {
 
     }
 
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable int id){
+        productDao.delete(id);
+        System.out.println("Deleted: " + getProductById(id));
+    }
+
 }
 
 
